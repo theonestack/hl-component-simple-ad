@@ -9,10 +9,11 @@ CfhighlanderTemplate do
     ComponentParam 'VPCId', type: 'AWS::EC2::VPC::Id'
     ComponentParam 'SubnetIds', type: 'CommaDelimitedList'
     ComponentParam 'DnsDomain'
-    ComponentParam 'SSMParameterPath', '/simple-ad/${EnvironmentName}/master_password'
-    ComponentParam 'Identifier', component_name
   end
 
-  Component name: 'securepassword', template: 'github:theonestack/hl-component-password-generator#master.snapshot', render: Inline
+  Component name: 'securepassword', template: 'github:theonestack/hl-component-password-generator#master.snapshot', render: Inline do
+    parameter name: 'securepasswordSSMParameterPath', value: '/simple-ad/${EnvironmentName}/master_password'
+    parameter name: 'securepasswordIdentifier', value: component_name
+  end
 
 end
