@@ -7,7 +7,7 @@ CfhighlanderTemplate do
     ComponentParam 'EnvironmentType', 'development', allowedValues: ['development','production'], isGlobal: true
     ComponentParam 'Size', 'Small', allowedValues: ['Small','Large']
     ComponentParam 'VPCId', type: 'AWS::EC2::VPC::Id'
-    ComponentParam 'SubnetIds', type: 'CommaDelimitedList'
+    ComponentParam 'SubnetIds', ''
     ComponentParam 'DnsDomain'
     ComponentParam 'Identifier', component_name
     ComponentParam 'PathSuffix', 'admin-password'

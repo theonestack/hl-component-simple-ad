@@ -12,7 +12,10 @@ CloudFormation do
     Size Ref(:Size)
     ShortName short_name unless short_name.nil?
     VpcSettings ({
-      SubnetIds: Ref(:SubnetIds),
+      SubnetIds: [
+        FnSelect(0, FnSplit(",", Ref(:SubnetIds))),
+        FnSelect(1, FnSplit(",", Ref(:SubnetIds)))
+      ],
       VpcId: Ref(:VPCId)
     })
   }
