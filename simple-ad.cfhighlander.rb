@@ -13,7 +13,7 @@ CfhighlanderTemplate do
     ComponentParam 'PathSuffix', 'admin-password'
   end
 
-  Component name: 'securepassword', template: 'github:theonestack/hl-component-password-generator#master.snapshot', render: Inline do
+  Component name: 'securepassword', template: 'password-generator@0.1.0', render: Inline do
     parameter name: 'Identifier', value: Ref(:Identifier)
     parameter name: 'PathSuffix', value: Ref(:PathSuffix)
   end
