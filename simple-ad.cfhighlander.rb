@@ -11,6 +11,7 @@ CfhighlanderTemplate do
     ComponentParam 'DnsDomain'
     ComponentParam 'Identifier', component_name
     ComponentParam 'PathSuffix', 'admin-password'
+    ComponentParam 'AwsSSO', 'false', allowedValues: ['true', 'false']
   end
 
   Component name: 'securepassword', template: 'password-generator@0.1.0', render: Inline do

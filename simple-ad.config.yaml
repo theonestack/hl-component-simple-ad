@@ -1,0 +1,2 @@
+# set to true to create a dhcp option set with the simple AD dns and netbios name servers
+create_dhcp: false
