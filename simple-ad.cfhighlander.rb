@@ -14,7 +14,7 @@ CfhighlanderTemplate do
     ComponentParam 'AwsSSO', 'false', allowedValues: ['true', 'false']
   end
 
-  Component name: 'securepassword', template: 'password-generator@0.1.0', render: Inline do
+  Component name: 'securepassword', template: 'password-generator@0.2.0', render: Inline do
     parameter name: 'Identifier', value: Ref(:Identifier)
     parameter name: 'PathSuffix', value: Ref(:PathSuffix)
   end
